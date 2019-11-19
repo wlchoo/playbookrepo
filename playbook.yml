@@ -6,11 +6,11 @@
     win_feature:
       name: Web-Server
       state: present
-  -name: IIS servcie started
+  - name: IIS servcie started
     win_service:
       name: W3Svc
       state: started
-  -name: Website index.html created
+  - name: Website index.html created
     win_copy:
       content: "hello world"
       dest: C:\Inetpub\wwwroot\index.html
