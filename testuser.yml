@@ -2,9 +2,10 @@
 - name: Creating users
   hosts: all
   vars_files:
-    - cwl/vars.yml
+    - ./cwl/vars.yml
   tasks:
   - name: Creating user {{ usr }}
     win_user:
       name: user_{{ usr }}
       state: present
+...
