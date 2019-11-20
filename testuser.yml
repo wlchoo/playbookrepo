@@ -1,8 +1,10 @@
 ---
 - name: Creating users
   hosts: all
-  vars:
-    - usr: testuser
+#  vars:
+#    - usr: testuser
+  var_files:
+    - vars.yml
   tasks:
   - name: Creating user {{ usr }}
     win_user:
