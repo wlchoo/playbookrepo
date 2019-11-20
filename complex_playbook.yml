@@ -1,0 +1,35 @@
+---
+- name: Creating a simple playbook
+  hosts: all
+  tasks:
+  - name: IIS service installed
+    win_feature:
+      name: Web-Server
+      state: present
+  - name: IIS servcie started
+    win_service:
+      name: W3Svc
+      state: started
+  - name: Website index.html created
+    win_copy:
+      content: "hello world"
+      dest: C:\Inetpub\wwwroot\index.html
+- name: This is second play
+  hosts: all
+  tasks:
+      - name: Creating a directory
+        win_file:
+              path: C:\custom_share
+              state: directory
+      - name: Enabling the sharing
+        win_share:
+          name: windown_share
+          description: this is a custom share
+          path: C:\custom_share
+          full: Administrator
+          state: present
+      - name: Copying some custom content
+        win_copy:
+            content: "This is a shared content"
+            dest: C:\\custom_share\\shared.txt
+...
