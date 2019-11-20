@@ -1,0 +1,10 @@
+---
+- name: Creating users
+  hosts: all
+  vars:
+    - usr: testuser
+  tasks:
+  - name: Creating user {{ usr }}
+    win_user:
+      name: user_{{ usr }}
+      state: present
