@@ -1,8 +1,6 @@
 ---
 - name: Creating users
   hosts: all
-#  vars:
-#    - usr: testuser
   var_files:
     - vars.yml
   tasks:
