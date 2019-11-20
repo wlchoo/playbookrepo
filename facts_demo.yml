@@ -1,0 +1,8 @@
+---
+- name: Testing facts
+  hosts: all
+  tasks:
+  - name: Testing a fact
+    win_template:
+      src: template.j2
+      dest: c:\\Users\\Administrator\\Desktop\\facts.txt
