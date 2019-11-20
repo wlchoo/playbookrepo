@@ -1,0 +1,3 @@
+Welcome to {{ ansible_ip_address }}
+
+System Architecture is {{ ansible_facts.architecture }} and distribution is {{ ansible_facts.distribution }}
